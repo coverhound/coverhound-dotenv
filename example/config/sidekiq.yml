@@ -1,0 +1,15 @@
+---
+:verbose: true
+:pidfile: tmp/pids/sidekiq.pid
+:concurrency: 2
+:timeout: 30
+:queues:
+  - quote_request
+  - searchkick
+  - default
+  - mailers
+:host: localhost:9200
+production:
+  :verbose: false
+  :concurrency: 10
+  :host: <%= ENV.fetch('REDIS_HOST') %>

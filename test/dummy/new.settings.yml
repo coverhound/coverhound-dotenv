@@ -1,0 +1,288 @@
+defaults: &defaults
+  asset_prefix: <%= ENV["TESTSSS"] %>
+  aws:
+    admin_access_key_id: AKIAI6UF3XZGSGIPZLAA
+    admin_secret_access_key: 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
+    development_bucket: coverhound-development
+    production_bucket: coverhound-production
+    staging_bucket: coverhound-staging
+  bitly:
+    access_token: b2f9a91da88618de521858e48826a29d709b488a
+  chubb:
+    bind:
+      document:
+        host: https://sitaws1.acegroup.com
+        password: gSuAzCbfE9VzvBGa
+        path: "/Westchester/FastTrack/BlackBoxRater/V1/BlackBoxRater.svc/rest/document?type=policy"
+        username: ACEPARTNER\CoverHoundSvc
+      request:
+        host: https://sitaws1.acegroup.com
+        password: gSuAzCbfE9VzvBGa
+        path: "/Westchester/FastTrack/BlackBoxRater/V1/BlackBoxRater.svc/rest/policy"
+        username: ACEPARTNER\CoverHoundSvc
+    bop:
+      host: https://sitaws1.acegroup.com
+      password: gSuAzCbfE9VzvBGa
+      path: "/Westchester/FastTrack/BlackBoxRater/V1/BlackBoxRater.svc/rest/quote"
+      username: ACEPARTNER\CoverHoundSvc
+    general_liability:
+      host: https://sitaws1.acegroup.com
+      password: gSuAzCbfE9VzvBGa
+      path: "/Westchester/FastTrack/BlackBoxRater/V1/BlackBoxRater.svc/rest/quote"
+      username: ACEPARTNER\CoverHoundSvc
+    professional_liability:
+      host: https://sitaws1.acegroup.com
+      password: gSuAzCbfE9VzvBGa
+      path: "/Westchester/FastTrack/BlackBoxRater/V1/BlackBoxRater.svc/rest/quote"
+      username: ACEPARTNER\CoverHoundSvc
+  commercial:
+    basepath: business-insurance
+    brand: coverhound
+    google_tag_manager_id: NO_KNOWN_DEVELOPMENT_VALUE
+  commercial_agency:
+    auth_sessions:
+      max_count: 2
+      timeout: 30
+      token_life_span: 4
+    google_auth:
+      identifier: 256073445509-p8ltj5bn51dqte2gcvs8eeedd9l60t1q.apps.googleusercontent.com
+      secret: aDFyOlWNHlajEpNH_ibeduxD
+    host: localhost:3000
+    slack:
+      webhook_path: T029BS5R0/B6EG0BYT0/P25g44oQ6DJAo3zi9zIGVpvt
+  commercial_app:
+    integration_stubbing:
+      bind:
+        enabled: false
+      quote:
+        enabled: false
+      service:
+        enabled: false
+    mailer:
+      force_no_delivery: true
+  commercial_honeybadger:
+    api_key: 46447e56
+  core_logic:
+    password: coverhound
+    url: http://rcttest7.msbexpress.net/coverhound/ExpressLync4/SOAP/ValuationService.svc
+    username: coverhound_EL
+  coverhound:
+    auth_sessions:
+      max_count: 2
+      timeout: 30
+      token_life_span: 4
+    auto_quote_api_enabled: true
+    cookie_secret: daa9d1441beb8e22c51ae152a2686887b32adc05acd4b5b895415af030744f93954526581960880aa5d34708634b1f28263164847b4503bf89a64eaabf4574de
+    encrypt_iv: c8db17f04a712beda4add199fbc2fe21
+    encrypt_key: a979b2d5c8f924eb5a97054af44fb964
+    env_name: development
+    force_polling: true
+    protect_from_forgery: godoffeibAucjodJaktubdoHomlactEuzeryejNeisIdOpsEwjigJiphCyensUs4
+    secret_key_base: f0e4c9b58a4a0337f119f859d457bd2d35f8d2154ccb65e251068fb797cc5aba0ff0784cae209817b5c3da98951644bff3a23a88caebde1aeb6348906b5d4dd8
+  delighted:
+    commercial:
+      api_key: ''
+    personal_lines:
+      api_key: ''
+  docusign:
+    account_id: 4c4fcd76-f33f-41f3-87a8-04a066bd9038
+    api_version: v2
+    endpoint: https://demo.docusign.net/restapi
+    integrator_key: COVE-beb50940-03e7-4729-946d-a382d10e21b2
+    password: AwgIRA=p5gstXctje2Sh
+    username: processing@coverhound.com
+  edmunds:
+    api_key: 2gu4r2r74s5va5qhs4eeewnt
+    shared_secret: YZShGP3XNjGshwas6TNDCY2d
+  elasticsearch:
+    host: 7c2dcb7f8a9ce4a96862c2f16797af5e.us-west-1.aws.found.io
+    password: 7UM2Ah4LqqGq9QjwBY
+    port: 9243
+    scheme: https
+    user: readwrite
+  enable_minitest_reporter: 
+  esurance:
+    call_center_partner_id: '18588'
+    call_center_password: chound
+    host: https://qa1stsweb.esurance.com
+    online_partner_id: '18592'
+    online_password: chound
+    partner_id: 
+    password: 
+    path: "/OLBService/TokenizeOLBPANWebService.asmx"
+  ezlynx:
+    account_username: BasilEnan
+    api_password: a
+    api_secret: a
+    api_username: a
+    endpoint: https://services.ezlynx.com
+    policy_account_username: a
+    policy_password: a
+    policy_username: a
+    vendor_password: uykf3er6rLbR,moFrh
+    vendor_username: cvh_uploadPROD
+  facebook:
+    app_id: '111109562357655'
+    app_secret: 75de28b34d4bf7e55d0aea41372d2dd8
+  found:
+    endpoint: 
+    https_port: 
+    readwrite_key: 
+    readwrite_user: 
+  geckoboard:
+    api_key: a
+  google:
+    api_key: AIzaSyAIYmh4YvX9Ki7pjal3nhMxpDnIx0G_i60
+  google_auth:
+    identifier: 101939415056-7snhf0714p188de9phdcul5mgn54daq6.apps.googleusercontent.com
+    secret: ZTZKW1sMkVmDyVCENPbiW0bz
+  hiscox:
+    access_token:
+      client_id: oYj2hLHjtafOgFRErXAtASG9AhlPnhm6
+      client_secret: rAMGWtnjtgbYrcFz
+      url: https://hiscox-us-test.apigee.net/toolbox/auth/accesstoken
+    host: https://hiscox-us-test.apigee.net
+    path: "/partner/v1/quote"
+  honeybadger:
+    api_key: 96ebcbac
+    public_api_key: 9af58d88444a42c8ecd88d4c2a2fbd08
+  lexis_nexis:
+    carrier_account_no: 515393CVH
+    client_id: IP0592000
+    host: https://t.decisioning.lexisnexis.com
+    password: Cq8kWx36
+    pnc_account: 515393CVH
+    username: coverhdts
+  liberty_mutual:
+    commercial:
+      bop:
+        host: https://stage-ci-policyquoteapi.libertymutual.com
+        login: Coverhound1
+        password: Liberty1
+        path: "/v1/quotes"
+    host: https://test.leadcloud.us
+    path: "/auto/6afcd2b6-74c1-4982-926b-3ae0b7881473"
+  mercury:
+    contract_number: 42T154
+    host: https://mrstage.mercuryinsurance.com
+    password: ch1p@$$
+    username: ch
+  newrelic:
+    license_key: e7e22adf8a23389d9657fb537e5168920863f0ac
+  paperclip:
+    api_key: 676cd521-ec1a-459a-9325-c3106c3da8cc
+    commercial_document_secret: SecretsDontMakeFriends
+    id_card_secret: a
+    modified_application_secret: a
+    original_application_secret: a
+    phone_message_secret: a
+    settlement_attachment_secret: a
+  pdf_storage:
+    bucket: coverhound-dev-private
+  pdftk:
+    path: "/usr/local/bin/pdftk"
+  polk:
+    password: 9JGDhTopUkUf3gJzPJ
+    username: joycr00
+  pusher:
+    app_id: '57479'
+    key: e2d51987bfd8b6df60e9
+    secret: 6ba00b40595c3e4c1b5c
+  read_only_sync:
+    host: a
+    password: a
+    username: a
+  s3:
+    admin_access_key_id: AKIAJPUAE5JB7U4MMIXA
+    admin_secret_access_key: 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
+    bucket: coverhound-development
+  safeco:
+    host: https://safesite.qa.safeco.com
+    password: u34vtw9x
+    rc3_host: https://billing.safesite.qa.safeco.com
+    username: plpt110
+  safeco_hnt:
+    host: https://safesite.qa.safeco.com
+    password: u34vtw9x
+    username: plpt110
+  send_with_us:
+    api_key: a
+    test_api_key: a
+  sendgrid:
+    password: X6o(5vHLIszja"J
+    username: coverhound
+  sentry:
+    dsn:
+      js: https://80994b6694034f8b8fa82e6b74f8ff5a@sentry.io/177364
+      ruby: https://80994b6694034f8b8fa82e6b74f8ff5a:a98c822a8a004876823b5a91d3b4fd32@sentry.io/177364
+  snapshot_storage:
+    decryption_keyfile: private/snapshot-secret.key
+    s3:
+      access_key_id: AKIAILNKLA63IOPH4O5A
+      bucket: coverhound-data
+      path: 
+      paths:
+        custom_snapshots: custom_snapshots
+        partial_snapshots: snapshots
+      secret_access_key: DVgbR/jwTbZV1SwREE5m21TZz8GeFJYSKJZUrbHD
+  sources_and_phones:
+    password: 028f74396063565ae3
+    username: coverhound
+  stripe:
+    public_key: pk_test_57UZCCDlG9fg0I8F8msckEQE
+    secret_key: sk_test_67S0SOUeVPRIqEwNVEh181ce
+  telesphere:
+    sf_api_login: coverhound_engineering@voip.tnltd.net
+    sf_api_password: qag5FqU0MoejTsC1
+    subscriber_id: 4156850719@voip.tnltd.net
+    westlake_api_login: coverhound_engineering@voip.tnltd.net
+    westlake_api_password: qag5FqU0MoejTsC1
+  titan:
+    client_cert_path: private/certs/coverhound_test.pem
+    client_key_path: private/certs/coverhound_key.pem
+    host: https://b2bwsit.nationwide.com
+    password: Password1
+    username: sgTITS01
+  transunion:
+    certs:
+      ca_file: private/certs/transunion/COVERHO3.ca.pem
+      client_cert: private/certs/transunion/COVERHO3.client.pem
+      client_key: private/certs/transunion/COVERHO3.key.pem
+    driver_risk:
+      password: Y1G2
+      subscriber_code: '9004701'
+      subscriber_prefix: '0622'
+    license_key: CDB1C26D-9780-4BB4-8B76-E4A2A89AD246
+    url: https://netaccess-test.transunion.com
+    vehicle_prefill:
+      password: DJKT
+      subscriber_code: '9004887'
+      subscriber_prefix: '0622'
+  twenty_first:
+    host: https://test.autowebservice.21st.com
+    org_code: com.coverhound
+  twilio:
+    account_sid: ACc05ee84bc772913281e04ee9b9c5cfae
+    account_token: 52ea6d4aacc323610edf51f3b6c23b69
+  twitter:
+    consumer_key: KHXSGt1WtW98wqkQd6Gw
+    consumer_secret: 6tniUMiezHUSd7bdJBlN1tIOY2Uj3K3S7DFTurOWo
+    oauth_token: 52191913-UZ9iIcHFYBrxfRcyWcqUMnprwRZ6TDWm28ZCfYRcE
+    oauth_token_secret: SmMOUDvmmuU4htLLqXzUkhiaT7Ua8HmGucBbUszMBM
+    test_api_key: 
+
+
+test:
+  <<: *defaults
+
+development:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+
+preprod:
+  <<: *defaults
+
+production:
+  <<: *defaults
