@@ -1,0 +1,43 @@
+defaults: &defaults
+  pool: 5
+  adapter: mysql2
+  encoding: utf8
+  collation: utf8_unicode_ci
+
+env: &env
+  <<: *defaults
+  host: <%= ENV.fetch('DATABASE_HOST') %>
+  port: <%= ENV.fetch('DATABASE_PORT') %>
+  database: <%= ENV.fetch('DATABASE_NAME') %>
+  username: <%= ENV.fetch('DATABASE_USER') %>
+  password: <%= ENV.fetch('DATABASE_PASSWORD') %>
+
+development:
+  <<: *defaults
+  database: coverhound_development
+  host: localhost
+  username: root
+  password:
+
+test:
+  <<: *defaults
+  database: coverhound_test
+  host: localhost
+  username: root
+  password:
+
+staging:
+  <<: *env
+  pool: 90
+
+preprod:
+  <<: *env
+  pool: 10
+
+production:
+  <<: *env
+
+snapshot:
+  <<: *env
+  username: <%= ENV.fetch('DATABASE_SNAPSHOT_USER') %>
+  password: <%= ENV.fetch('DATABASE_SNAPSHOT_PASSWORD') %>
