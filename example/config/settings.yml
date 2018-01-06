@@ -1,0 +1,17 @@
+defaults: &defaults
+  one: ENV.fetch("EXAMPLE")
+
+test:
+  <<: *defaults
+
+development:
+  <<: *defaults
+
+staging:
+  <<: *env
+
+preprod:
+  <<: *env
+
+preprod:
+  <<: *env

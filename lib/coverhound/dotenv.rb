@@ -1,0 +1,1 @@
+require "coverhound/dotenv/railtie"
