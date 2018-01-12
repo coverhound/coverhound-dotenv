@@ -1,5 +1,7 @@
 # CoverHound Dotenv
 
+[![Build Status](https://api.travis-ci.org/coverhound/coverhound-dotenv.svg?branch=master)](https://travis-ci.org/coverhound/coverhound-dotenv)
+
 This gem is a dotenv implementation for CoverHound. It has these variances of
 behavior based on environment:
 
