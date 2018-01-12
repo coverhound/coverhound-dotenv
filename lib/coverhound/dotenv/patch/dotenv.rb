@@ -16,7 +16,7 @@ module Coverhound
       end
 
       def call
-        if encrypted?
+        if encrypted? && file?
           Coverhound::Dotenv::EncryptedDotenv.new(filename).read || raise(Errno::ENOENT)
         elsif chamber?
           Coverhound::Dotenv::Chamber.new(app_name: app_name, env: env, region: region).env
@@ -24,6 +24,10 @@ module Coverhound
       end
 
       private
+
+      def file?
+        File.file?(filename)
+      end
 
       def encrypted?
         filename.end_with?(".enc")

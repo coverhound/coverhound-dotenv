@@ -1,7 +1,9 @@
-if Gem::Dependency.new("rails", "~> 5.2").match?("rails", Rails::VERSION::STRING)
+if Gem::Dependency.new("rails", ">= 5.2").match?("rails", Rails::VERSION::STRING)
   require "active_support/encrypted_file"
+elsif Gem::Dependency.new("rails", ">= 5.0").match?("rails", Rails::VERSION::STRING)
+  require_relative "polyfill/rails_5_0"
 else
-  require_relative "polyfill/encrypted_file"
+  require_relative "polyfill/rails_4_2"
 end
 
 module Coverhound::Dotenv
