@@ -31,7 +31,7 @@ module ActiveSupport
 
     attr_reader :content_path, :key_path, :env_key
 
-    def initialize(content_path:, key_path:, env_key:)
+    def initialize(content_path:, key_path:, env_key:, **_)
       @content_path, @key_path = Pathname.new(content_path), Pathname.new(key_path)
       @env_key = env_key
     end
