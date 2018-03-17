@@ -74,7 +74,7 @@ require "capistrano/coverhound-dotenv"
 
 ## AWS Configuration
 
-Ensure the machine has has a role that can read the ParameterStore. There is an
+Ensure the machine has a role that can read the ParameterStore. There is an
 existing policy called `ParameterStoreReadOnly` for this. Apply it to each
 `$APPLICATION-$ENV` role.
 
