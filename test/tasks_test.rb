@@ -43,6 +43,7 @@ describe "ch:dotenv" do
       Rake::Application.new.tap do |r|
         Rake.application = r
         Rake.load_rakefile("tasks/coverhound-dotenv.rake")
+        Rake::Task.define_task(:environment)
       end
     end
   end
