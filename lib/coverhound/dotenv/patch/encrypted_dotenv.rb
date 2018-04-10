@@ -13,6 +13,7 @@ module Coverhound::Dotenv
         content_path: content_path,
         key_path: File.expand_path("../dotenv.key", content_path),
         env_key: "RAILS_DOTENV_SECRET",
+        raise_if_missing_key: true,
       )
     end
 
