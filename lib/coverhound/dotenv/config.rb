@@ -29,7 +29,7 @@ module Coverhound
       private
 
       def root
-        Rails.root
+        Rails.root || Pathname.new(Dir.pwd)
       end
 
       def dotenv_options
