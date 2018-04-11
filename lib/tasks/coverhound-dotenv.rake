@@ -41,7 +41,7 @@ namespace "ch:dotenv" do
   end
 
   desc "Validate existence of environment variables against .env"
-  task :validate do
+  task validate: :environment do
     require "coverhound/dotenv/command/validate"
 
     print "Validating presence of environment variables against development.env... "

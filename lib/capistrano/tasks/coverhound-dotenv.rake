@@ -12,5 +12,5 @@ namespace "ch:dotenv" do
     end
   end
 
-  after "bundler:install", :validate_environment
+  after "bundler:install", "ch:dotenv:validate_environment"
 end

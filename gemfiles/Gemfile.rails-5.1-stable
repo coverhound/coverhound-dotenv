@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gemspec
+gemspec path: '..'
 
-gem "rails", "~> 5.2"
+gem 'rails', github: 'rails/rails', branch: '5-1-stable'
 
 group :development, :test do
   gem "pry"
