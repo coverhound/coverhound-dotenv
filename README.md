@@ -29,6 +29,9 @@ These variables are injected into Rails' environment.
 
 ## Prerequisites
 
+Note: For the sake of consistency, we assume that the server and client are
+using the same `chamber` version, and are on `> 1.17`.
+
 ### Server
 
 Your server must have `chamber` installed in its path. It must also either:
@@ -74,7 +77,7 @@ require "capistrano/coverhound-dotenv"
 
 ## AWS Configuration
 
-Ensure the machine has a role that can read the ParameterStore. There is an
+Ensure the machine has has a role that can read the ParameterStore. There is an
 existing policy called `ParameterStoreReadOnly` for this. Apply it to each
 `$APPLICATION-$ENV` role.
 
@@ -171,46 +174,51 @@ brew install chamber
 
 ## Running Chamber manually
 
+### Configuring AWS CLI
+
+If you're running this on your local machine, you'll need to install AWS CLI.
+
+```sh
+brew install awscli
+```
+
+and then configure using your IAM settings:
+
+```sh
+aws configure
+
+# AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+# AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+# Default region name [None]: us-west-1
+```
+
+### Running the commands
+
 You may want to manage credentials after the migration process. You'll have two
 options: use the AWS interface or use chamber. I recommend the latter.
 
-Variables:
+An example `APP_ENV` is `cyber-staging`. In order to run the commands below, the
+following needs to be in your environment:
 
 ```sh
-APP_ENV=cyber-staging
-REGION=us-west-1
+CHAMBER_KMS_KEY_ALIAS=[APP_ENV]
+CHAMBER_AWS_REGION=us-west-1
 ```
 
 List all current variables
 
 ```sh
-CHAMBER_KMS_KEY_ALIAS=$APP_ENV \
-CHAMBER_AWS_REGION=$REGION \
-chamber list $APP_ENV
+chamber list [APP_ENV]
 ```
 
 Add or replace a variable
 
 ```sh
-CHAMBER_KMS_KEY_ALIAS=$APP_ENV \
-CHAMBER_AWS_REGION=$REGION \
-chamber write $APP_ENV [KEY] [VALUE]
+chamber write [APP_ENV] [KEY] [VALUE]
 ```
 
 Remove a variable
 
 ```sh
-CHAMBER_KMS_KEY_ALIAS=$APP_ENV \
-CHAMBER_AWS_REGION=$REGION \
-chamber remove $APP_ENV [KEY]
-```
-
-### On the server:
-
-```sh
-CHAMBER_KMS_KEY_ALIAS=$APP_ENV \
-CHAMBER_AWS_REGION=$REGION \
-chamber exec $APP_ENV -- [COMMAND]
-
-# Loads everything into the environment for that command
+chamber remove [APP_ENV] [KEY]
 ```
